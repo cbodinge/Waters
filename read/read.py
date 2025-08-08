@@ -19,11 +19,12 @@ def _read(path: Path):
     return results
 
 def set_istds(results):
-    drugs = {result.istd_area: result.drug for result in results if result.drug_type==''}
+    drugs = {result.drug: result.istd_area for result in results if result.drug_type==''}
     istds = {result.target_area: result.drug for result in results if result.drug_type=='ISTD'}
 
-    for istd_area, drug in drugs.items():
+    for drug, istd_area in drugs.items():
         istd = istds.get(istd_area)
+        pass
         for result in [i for i in results if i.drug==drug]:
             result.istd = istd
 

@@ -19,4 +19,4 @@ def open_folder(path):
 if __name__ == '__main__':
     _path = Path(filedialog.askopenfilename(title='Select a Waters XML Export'))
     to_csv(_path)
-    open_folder(Path.cwd())
+    open_folder('C:/Coding Projects/Waters/output')
